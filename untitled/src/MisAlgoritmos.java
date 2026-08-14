@@ -2,7 +2,7 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos{
     @Override
     public int linearSearch(int[] arrayPorExplorar, int elementoABuscar) {
         int tamanolista = arrayPorExplorar.length;
-        for (int i = 0; i < arrayPorExplorar.length-1; i++) {
+        for (int i = 0; i < arrayPorExplorar.length; i++) {
             int elementoactual = arrayPorExplorar[i];
             if(elementoactual == elementoABuscar){
                 return i;
@@ -14,13 +14,6 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos{
 
     @Override
     public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
-        int tamanolista = arrayPorExplorar.length;
-        for (int i = 0; i < arrayPorExplorar.length-1; i++) {
-            int elementoactual = arrayPorExplorar[i];
-            if (elementoactual == elementoABuscar) {
-                return i;
-            }
-        }
         return 0;
     }
 
