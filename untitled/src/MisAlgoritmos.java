@@ -13,34 +13,23 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos{
 
 
     @Override
-    public int[] selectionSort(int[] arrayDesordenado) {
-
-
-        int n = arrayDesordenado.length;
-
-        for (int i = 0; i < n - 1; i++) {
-
-            int indiceMenor = i;
-
-            for (int j = i + 1; j < n; j++) {
-
-                if (arrayDesordenado[j] < arrayDesordenado[indiceMenor]) {
-                            indiceMenor = j;
-                }
-            }
-
-            int temporal = arrayDesordenado[i];
-            arrayDesordenado[i] = arrayDesordenado[indiceMenor];
-            arrayDesordenado[indiceMenor] = temporal;
-        }
-
-        return arrayDesordenado;
-
-    }
+    public int[] selectionSort(int[] arrayDesordenado) { return new int[0];}
 
     @Override
     public int[] insertionSort(int[] arrayDesordenado) {
-        return new int[0];
+        for (int i = 1; i < arrayDesordenado.length; i++){
+            int clave = arrayDesordenado[i];
+            int j = i - 1;
+
+            while (j >= 0 && arrayDesordenado[j] > clave){
+                arrayDesordenado[j + 1] = arrayDesordenado[j];
+                j--;
+            }
+            arrayDesordenado[j + 1] = clave;
+        }
+
+
+        return arrayDesordenado;
     }
 
     @Override
