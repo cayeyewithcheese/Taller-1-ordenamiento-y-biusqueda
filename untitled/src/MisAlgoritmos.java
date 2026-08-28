@@ -3,25 +3,7 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos{
     public int linearSearch(int[] arrayPorExplorar, int elementoABuscar) {return 0;}
 
     @Override
-    public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
-
-        int inicio = 0;
-        int fin = arrayPorExplorar.length - 1;
-
-        while (inicio <= fin) {
-            int medio = (inicio + fin) / 2;
-
-            if (arrayPorExplorar[medio] == elementoABuscar) {
-                return medio;
-            }
-            if (arrayPorExplorar[medio] < elementoABuscar){
-                inicio = medio + 1;
-            } else {
-                fin = medio - 1;
-            }
-        }
-        return -1;
-    }
+    public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {return 0;}
 
 
     @Override
@@ -32,7 +14,28 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos{
 
     @Override
     public int[] selectionSort(int[] arrayDesordenado) {
-        return new int[0];
+
+
+        int n = arrayDesordenado.length;
+
+        for (int i = 0; i < n - 1; i++) {
+
+            int indiceMenor = i;
+
+            for (int j = i + 1; j < n; j++) {
+
+                if (arrayDesordenado[j] < arrayDesordenado[indiceMenor]) {
+                            indiceMenor = j;
+                }
+            }
+
+            int temporal = arrayDesordenado[i];
+            arrayDesordenado[i] = arrayDesordenado[indiceMenor];
+            arrayDesordenado[indiceMenor] = temporal;
+        }
+
+        return arrayDesordenado;
+
     }
 
     @Override

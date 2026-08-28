@@ -4,12 +4,12 @@ public class Main {
     public static void main(String[] args) {
         MisAlgoritmos algoritmos = new MisAlgoritmos();
 
-        int[] numeros = {2, 5, 6, 12, 15, 20, 25};
+        int[] numeros = {64, 25, 12, 22, 11};
 
-        int elemento = 15;
+        int[] ordenado = algoritmos.selectionSort(numeros);
 
-        int posicion = algoritmos.binarySearch(numeros, elemento);
-            System.out.println("Posicion : " + posicion);
-
+        for (int numero : ordenado) {
+            System.out.print(numero + " ");
+        }
     }
 }
