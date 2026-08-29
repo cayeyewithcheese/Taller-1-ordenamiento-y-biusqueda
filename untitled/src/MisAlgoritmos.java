@@ -28,46 +28,49 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos {
 
     @Override
     public int[] mergeSort(int[] arrayDesordenado) {
-        if (arrayDesordenado.length <= 1) {
-            return arrayDesordenado;
-        }
-        int mitad = arrayDesordenado.length / 2;
-        int[] izquierda = new int[mitad];
-        int[] derecha = new int[arrayDesordenado.length - mitad];
-        for (int i = 0; i < mitad; i++) {
-            izquierda[i] = arrayDesordenado[i];
-        }
-        for (int i = mitad; i < arrayDesordenado.length; i++) {
-            derecha[i - mitad] = arrayDesordenado[i];
-        }
-        izquierda = mergeSort(izquierda);
-        derecha = mergeSort(derecha);
-
-        return merge(izquierda, derecha);
+        return new int[0];
     }
 
-    private int[] merge(int[] izquierda, int[] derecha) {
-        int[] resultado = new int[izquierda.length + derecha.length];
-        int i = 0, j = 0, k = 0;
-        while (i < izquierda.length && j < derecha.length) {
-            if (izquierda[i] <= derecha[j]) {
-                resultado[k++] = izquierda[i++];
-            } else {
-                resultado[k++] = derecha[j++];
-            }
-        }
-        while (i < izquierda.length) {
-            resultado[k++] = izquierda[i++];
-        }
-        while (j < derecha.length) {
-            resultado[k++] = derecha[j++];
-        }
-        return resultado;
-    }
 
     @Override
     public int[] quickSort(int[] arrayDesordenado) {
-        return new int[0];
+        quickSortAux(arrayDesordenado, 0, arrayDesordenado.length - 1);
+        return arrayDesordenado;
+    }
+
+    private void quickSortAux(int[] arreglo, int inicio, int fin) {
+
+        if (inicio < fin) {
+
+            int pivote = particion(arreglo, inicio, fin);
+
+            quickSortAux(arreglo, inicio, pivote - 1);
+            quickSortAux(arreglo, pivote + 1, fin);
+        }
+    }
+
+    private int particion(int[] arreglo, int inicio, int fin) {
+
+        int pivote = arreglo[fin];
+        int i = inicio - 1;
+
+        for (int j = inicio; j < fin; j++) {
+
+            if (arreglo[j] <= pivote) {
+
+                i++;
+
+                int temp = arreglo[i];
+                arreglo[i] = arreglo[j];
+                arreglo[j] = temp;
+            }
+        }
+
+        int temp = arreglo[i + 1];
+        arreglo[i + 1] = arreglo[fin];
+        arreglo[fin] = temp;
+
+        return i + 1;
     }
 }
 

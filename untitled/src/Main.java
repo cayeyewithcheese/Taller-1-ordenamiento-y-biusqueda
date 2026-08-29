@@ -2,11 +2,12 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
         MisAlgoritmos algoritmos = new MisAlgoritmos();
 
-        int[] numeros = {38, 27, 43, 3, 8, 82, 11};
+        int[] numeros = {10, 7, 8, 9, 1, 5};
 
-        int[] ordenado = algoritmos.mergeSort(numeros);
+        int[] ordenado = algoritmos.quickSort(numeros);
 
         for (int numero : ordenado) {
             System.out.print(numero + " ");
