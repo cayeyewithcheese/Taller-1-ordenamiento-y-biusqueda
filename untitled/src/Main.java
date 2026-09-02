@@ -5,9 +5,9 @@ public class Main {
 
         MisAlgoritmos algoritmos = new MisAlgoritmos();
 
-        int[] numeros = {5, 10, 15, 20, 25};
+        int[] numeros = {5, 20, 25, 30, 35,40 };
 
-        int posicion = algoritmos.linearSearch(numeros, 25);
+        int posicion = algoritmos.binarySearch(numeros, 20);
 
         System.out.println("Posición: " + posicion);
     }
