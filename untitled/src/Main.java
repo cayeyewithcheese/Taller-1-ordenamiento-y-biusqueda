@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         MisAlgoritmos algoritmos = new MisAlgoritmos();
 
-        int[] numeros = {5, 1, 4, 2, 8};
+        int[] numeros = {64, 25, 12, 22, 11};
 
-        int[] resultado = algoritmos.bubbleSort(numeros);
+        int[] resultado = algoritmos.selectionSort(numeros);
 
         for (int n : resultado) {
             System.out.print(n + " ");
