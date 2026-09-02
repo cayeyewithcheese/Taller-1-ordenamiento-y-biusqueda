@@ -5,12 +5,10 @@ public class Main {
 
         MisAlgoritmos algoritmos = new MisAlgoritmos();
 
-        int[] numeros = {10, 7, 8, 9, 1, 5};
+        int[] numeros = {5, 10, 15, 20, 25};
 
-        int[] ordenado = algoritmos.quickSort(numeros);
+        int posicion = algoritmos.linearSearch(numeros, 25);
 
-        for (int numero : ordenado) {
-            System.out.print(numero + " ");
-        }
+        System.out.println("Posición: " + posicion);
     }
 }
