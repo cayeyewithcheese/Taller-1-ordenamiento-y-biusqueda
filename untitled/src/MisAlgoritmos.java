@@ -83,8 +83,24 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos {
 
     @Override
     public int[] insertionSort(int[] arrayDesordenado) {
-        return new int[0];
+
+        for (int i = 1; i < arrayDesordenado.length; i++) {
+
+            int clave = arrayDesordenado[i];
+            int j = i - 1;
+
+            while (j >= 0 && arrayDesordenado[j] > clave) {
+
+                    arrayDesordenado[j + 1] = arrayDesordenado[j];
+                    j--;
+            }
+
+                arrayDesordenado[j + 1] = clave;
+        }
+
+        return arrayDesordenado;
     }
+
 
     @Override
     public int[] mergeSort(int[] arrayDesordenado) {
