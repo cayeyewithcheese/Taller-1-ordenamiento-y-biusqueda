@@ -2,13 +2,14 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
         MisAlgoritmos algoritmos = new MisAlgoritmos();
 
-        int[] numeros = {5, 20, 25, 30, 35,40 };
+        int[] numeros = {5, 1, 4, 2, 8};
 
-        int posicion = algoritmos.binarySearch(numeros, 20);
+        int[] resultado = algoritmos.bubbleSort(numeros);
 
-        System.out.println("Posición: " + posicion);
+        for (int n : resultado) {
+            System.out.print(n + " ");
+        }
     }
 }

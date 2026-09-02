@@ -38,7 +38,22 @@ public class MisAlgoritmos implements Busquedas,Ordenamientos {
 
     @Override
     public int[] bubbleSort(int[] arrayDesordenado) {
-        return new int[0];
+        int[] array = arrayDesordenado.clone();
+
+        for (int i = 0; i < arrayDesordenado.length - 1; i++) {
+
+            for (int j = 0; j < arrayDesordenado.length - 1 - i; j++) {
+
+                if (array[j] > array[j + 1]) {
+
+                    int temporal = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temporal;
+                }
+            }
+        }
+
+            return array;
     }
 
 
